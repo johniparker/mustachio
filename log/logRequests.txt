@@ -1050,3 +1050,17 @@
 [0mGET / [32m200[0m 23.917 ms - 2778[0m
 [0mGET /lotr [32m200[0m 771.471 ms - 2988[0m
 [0mGET /lotr [32m200[0m 528.556 ms - 2994[0m
+[0mGET / [32m200[0m 15.413 ms - 2893[0m
+[0mGET /lotr [32m200[0m 626.389 ms - 3078[0m
+[0mGET / [36m304[0m 13.689 ms - -[0m
+[0mGET /about [32m200[0m 5.400 ms - 4136[0m
+[0mGET /styles [32m200[0m 104.518 ms - 3995[0m
+[0mGET /user/favorite-styles [32m200[0m 155.350 ms - 2464[0m
+[0mGET /user/images/logo.jpg [33m404[0m 1.104 ms - 159[0m
+[0mGET /history [0m-[0m - ms - -[0m
+[0mGET /history [32m200[0m 4583.358 ms - 3481[0m
+[0mGET /lotr [36m304[0m 564.227 ms - -[0m
+[0mPOST /lotr/quote [32m200[0m 2033.467 ms - 3562[0m
+[0mGET /lotr/images/logo.jpg [33m404[0m 1.180 ms - 159[0m
+[0mPOST /lotr/quote [32m200[0m 3561.782 ms - 3105[0m
+[0mGET /lotr/images/logo.jpg [33m404[0m 4.640 ms - 159[0m

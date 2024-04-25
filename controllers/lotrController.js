@@ -24,7 +24,7 @@ exports.getLotr = async (req, res, next) => {
 
 exports.getRandomQuote = async (req, res, next) => {
   const moviesResponse = await lotrAxios.get("movie");
-  movies = moviesResponse.data.docs;
+  movies = moviesResponse.data.docs.slice(-3);
   const movieId = req.body.movieId;
 
   //get a random quote for the selected movie
