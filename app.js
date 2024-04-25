@@ -104,5 +104,5 @@ app.use(homeRoutes);
 
 // connect to mongoose db, then launch
 mongoose.connect(MONGODB_URI).then(() => {
-  app.listen(3000);
+  app.listen(process.env.PORT || 3000);
 });
