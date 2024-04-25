@@ -1,0 +1,29 @@
+<% if (quote) { %>
+<h1><span>YOUR RANDOM QUOTE:</span></h1>
+<h2><span><%= quote %> ~<%= character %></span></h2>
+<% } else { %>
+<h1><span>random lotr quote generator</span></h1>
+<h2><span>Select a Movie</span></h2>
+<% } %>
+<form action="/lotr/quote" method="POST">
+  <select name="movieId" required>
+    <% movies.forEach(movie => { %>
+    <option value="<%= movie._id %>"><%= movie.name %></option>
+    <% }); %>
+  </select>
+  <button type="submit">Get Quote</button>
+</form>
+
+
+<div>
+  <div class="article">
+    <h2><span>Powered By The One API</span></h2>
+    <p>
+      This page uses
+      <a href="https://the-one-api.dev/documentation">The One API</a>, the Lord
+      of the Rings API. The user selects a movie from a dropdown menu, and the
+      API call retrieves a random quote from the list of quotes associated with
+      that movie.
+    </p>
+  </div>
+</div>

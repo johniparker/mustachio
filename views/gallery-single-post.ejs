@@ -1,0 +1,15 @@
+<h1><span><%=style.title%></span></h1>
+<div>
+	<img src="/<%=style.imageURL%>" alt="<%=style.description%>">
+	<div class="article">
+		<h4><%=style.title%></h4>
+		<p><%=style.description%></p>
+		<% if (locals.user) { %>
+			<form action="/user/add-favorite" method="POST">
+				<input type="hidden" name="styleId" value="<%= style._id %>">
+				<button type="submit" class="btn btn-primary">Save as Favorite</button>
+			  </form>
+		<% } %>
+	</div>
+</div>
+</div>

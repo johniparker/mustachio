@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Website Template by freewebsitetemplates.com -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=pageTitle%></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/mobile.css"
+      media="screen and (max-width : 568px)"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/images/icons/icon-mustache.png"
+    />
+    <script type="text/javascript" src="/js/mobile.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <a href="/" class="logo">
+        <img src="images/logo.jpg" alt="" />
+      </a>
+      <ul id="navigation">
+        <li class="<%- path === '/' ? 'selected' : ''%>">
+          <a href="/">home</a>
+        </li>
+        <li class="<%- path.includes('about') ? 'selected' : ''%>">
+          <a href="/about">about</a>
+        </li>
+        <li class="<%- path === '/styles' ? 'selected' : ''%>">
+          <a href="/styles">gallery</a>
+        </li>
+        <% if (locals.user) { %>
+          <li class="<%= path === '/user/favorite-styles' ? 'selected' : '' %>">
+          <a href="/user/favorite-styles">your favorites</a></li>
+        <% } %>
+        <li class="<%- path.includes('blog') ? 'selected' : ''%>">
+          <a href="/blog">blog</a>
+        </li>
+        <li class="<%- path === '/contacts/new' ? 'selected' : ''%>">
+          <a href="/contacts/new">contact</a>
+        </li>
+        <% if (locals.user && locals.user.admin) { %>
+          <li class="<%- path === '/contacts' ? 'selected' : ''%>">
+            <a href="/contacts">contact requests</a>
+          </li>
+        <% } else { %>
+          <% } %>
+        <li>
+			    <%- isLoggedIn ? '<a href="/user/logout">Logout</a>' : `<a class="${pageTitle === "Login" ? "active" : ""}" href="/user/login">Login</a>` %>
+		    </li>
+        <li class="<%- path === '/lotr' ? 'selected' : ''%>">
+        <a href="/lotr">lotr</a>
+      </li>
+      <li class="<%- path === '/history' ? 'selected' : ''%>">
+        <a href="/history">history of the mustache</a>
+      </li>
+      </ul>
+    </div>
+  <% if (locals.user) { %>
+    <h1><span>Welcome, <%= locals.user.firstName %>!</span></h1>
+  <% } else { %>
+    <h1><span>Welcome!</span></h1>
+  <% } %>
+    <div id="body"><%- body %></div>
+    <div id="footer"><%- include('partials/social.ejs') %></div>
+  </body>
+</html>

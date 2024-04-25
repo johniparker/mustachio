@@ -1,0 +1,19 @@
+<h1><span><%= pageTitle %></span></h1>
+<% if (typeof message !== 'undefined' && message) { %>
+    <p><%= message %></p>
+  <% } %>
+<form action="/user/signup" method="POST">
+    <input type="text" name="firstName" id="firstName" placeholder="firstName" required>
+    <input type="text" name="lastName" id="lastName" placeholder="lastName" required>
+    <label for="email">
+      <span>E-mail:</span>
+      <input type="email" name="email" id="email" value="<%= locals.entries && locals.entries.email %>" />
+    </label>
+    <label for="password">
+      <span>Password:</span>
+      <input type="password" name="password" id="password" value="<%= locals.entries && locals.entries.password %>" />
+    </label>
+    <input type="submit" value="Sign Up" />
+    <p><a href="/user/signup" >New? Create an account.</a></p>
+  </form>
+</div>
