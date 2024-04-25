@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const lotrUrl = "https://the-one-api.dev/v2";
-const lotrKey = "your-lotr-key";
+const lotrKey = process.env.LOTR_API_KEY;
 
 //create custom axios instance for lotr api
 lotrAxios = axios.create({

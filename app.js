@@ -2,6 +2,7 @@
 const path = require("path");
 
 // Import npm libraries
+require("dotenv").config();
 const express = require("express");
 const ejs = require("ejs");
 const expressLayouts = require("express-ejs-layouts");
@@ -9,9 +10,9 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const multer = require("multer");
+
 //db collection string
-const MONGODB_URI =
-  "mongodb+srv://a02359825:aggies@cluster0.hii5f2d.mongodb.net/mustachio?retryWrites=true&w=majority&appName=Cluster0";
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.hii5f2d.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority&appName=Cluster0`;
 
 // import routes
 const homeRoutes = require("./routes/homeRoutes");
@@ -19,9 +20,9 @@ const stylesRoutes = require("./routes/stylesRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const userRoutes = require("./routes/userRoutes");
-const apiRoutes = require('./routes/apiRoutes');
-const lotrRoutes = require('./routes/lotrRoutes');
-const historyRoutes = require('./routes/historyRoutes');
+const apiRoutes = require("./routes/apiRoutes");
+const lotrRoutes = require("./routes/lotrRoutes");
+const historyRoutes = require("./routes/historyRoutes");
 const middleware = require("./middleware");
 
 const app = express();
